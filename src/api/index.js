@@ -1,0 +1,9 @@
+export function getData(path) {
+  const BASE_URL = "https://jsonplaceholder.typicode.com/";
+  return fetch(BASE_URL + path).then((response) => {
+    if (response.ok) {
+      return response.json();
+    }
+    throw new Error(response.statusText);
+  });
+}
